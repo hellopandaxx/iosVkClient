@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="syX-hy-7Dj">
+    <dependencies>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Web View Controller-->
+        <scene sceneID="CcN-XV-cEe">
+            <objects>
+                <viewController id="syX-hy-7Dj" customClass="LoginWebViewController" customModule="VKClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gPd-6V-wPt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M83-ab-pSF">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="M83-ab-pSF" firstAttribute="leading" secondItem="KOo-IB-YcN" secondAttribute="leading" id="3r3-Cm-SKN"/>
+                            <constraint firstItem="KOo-IB-YcN" firstAttribute="trailing" secondItem="M83-ab-pSF" secondAttribute="trailing" id="BoJ-fd-8Go"/>
+                            <constraint firstItem="M83-ab-pSF" firstAttribute="top" secondItem="KOo-IB-YcN" secondAttribute="top" id="ZlR-MU-rts"/>
+                            <constraint firstItem="KOo-IB-YcN" firstAttribute="bottom" secondItem="M83-ab-pSF" secondAttribute="bottom" id="uDf-Tj-d7k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KOo-IB-YcN"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="M83-ab-pSF" id="DvV-7b-o5V"/>
+                        <segue destination="48V-1p-SSf" kind="presentation" identifier="loginSegue" id="RoW-EH-5jD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FaX-23-gtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="75"/>
+        </scene>
+        <!--UITabBarController-jjj-VE-JiE-->
+        <scene sceneID="TxR-o5-ho1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UITabBarController-jjj-VE-JiE" id="48V-1p-SSf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Igz-5I-qfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1287" y="75"/>
+        </scene>
+    </scenes>
+</document>

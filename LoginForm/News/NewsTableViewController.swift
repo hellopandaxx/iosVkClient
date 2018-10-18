@@ -71,6 +71,8 @@ class NewsTableViewController: UITableViewController {
         cell.authorNameTxt.text = feed.authorName
         cell.contentTextTxt.text = feed.text
         
+        cell.mainImageImg.image = nil
+        
         if feed.mainImageUrl != "" {
             cell.mainImageImg.downloadedFrom(link: feed.mainImageUrl)
         }

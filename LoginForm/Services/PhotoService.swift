@@ -83,8 +83,6 @@ class PhotoService {
         return image
     }
     
-    
-    
     private func loadPhoto(atIndexpath indexPath: IndexPath, byUrl url: String) {
         Alamofire.request(url).responseData(queue: DispatchQueue.global()) { [weak self] response in
             guard
@@ -96,10 +94,8 @@ class PhotoService {
             DispatchQueue.main.async {
                 self?.container.reloadRow(atIndexpath: indexPath)
             }
-            
         }
     }
-    
 }
 
 fileprivate protocol DataReloadable {
@@ -118,7 +114,6 @@ extension PhotoService {
         func reloadRow(atIndexpath indexPath: IndexPath) {
             table.reloadRows(at: [indexPath], with: .none)
         }
-        
     }
     
     private class Collection: DataReloadable {

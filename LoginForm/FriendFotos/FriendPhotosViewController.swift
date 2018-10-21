@@ -48,9 +48,9 @@ class FriendPhotosViewController: UICollectionViewController {
     
     func pairTableAndRealm() {
         guard let realm = try? Realm() else { return }
-        print(friend!.firstName + " " + friend!.id.description)
+        
         let filter = "ownerId=\(friend!.id.description)"
-        print(filter)
+        
         photos = realm.objects(Photo.self).filter(filter)
         token = photos?.observe { [weak self] (changes: RealmCollectionChange) in
             guard let collectionView = self?.photosTableView else { return }

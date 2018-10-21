@@ -11,6 +11,8 @@ import WebKit
 
 class LoginWebViewController: UIViewController {
 
+    let userDefaults = UserDefaults.standard
+    
     @IBOutlet weak var webView: WKWebView!{
         didSet{
             webView.navigationDelegate = self

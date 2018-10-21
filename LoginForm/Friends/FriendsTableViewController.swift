@@ -13,7 +13,7 @@ class FriendsTableViewController: UITableViewController {
     
     @IBOutlet var friendsTableView: UITableView!
     
-    var friends: Results<User>? //= [User]()
+    var friends: Results<User>?
     var token: NotificationToken?
 
     override func viewDidLoad() {
@@ -87,8 +87,7 @@ class FriendsTableViewController: UITableViewController {
             
             if let indexPath = friendsTableView.indexPathForSelectedRow {
                  let friend = friends![indexPath.row]
-                print(friend.firstName)
-                //let friend = friends!.
+                
                 photosController?.friend = friend
             }
         }
@@ -138,5 +137,4 @@ class FriendsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

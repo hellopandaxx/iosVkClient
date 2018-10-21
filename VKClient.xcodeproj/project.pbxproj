@@ -29,7 +29,6 @@
 		AFCE2A292066AF310068DCFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCE2A272066AF310068DCFC /* Main.storyboard */; };
 		AFCE2A2B2066AF310068DCFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFCE2A2A2066AF310068DCFC /* Assets.xcassets */; };
 		AFCE2A2E2066AF310068DCFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCE2A2C2066AF310068DCFC /* LaunchScreen.storyboard */; };
-		AFCE2A362066AFD50068DCFC /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCE2A352066AFD50068DCFC /* LoginFormController.swift */; };
 		AFD19316209C8B12004EEECE /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD19315209C8B12004EEECE /* PhotoService.swift */; };
 		AFD290E0207038CF000C27F2 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD290DF207038CF000C27F2 /* FriendsTableViewController.swift */; };
 		AFD290E2207168CD000C27F2 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD290E1207168CD000C27F2 /* FriendsTableViewCell.swift */; };
@@ -65,7 +64,6 @@
 		AFCE2A2A2066AF310068DCFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFCE2A2D2066AF310068DCFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFCE2A2F2066AF310068DCFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFCE2A352066AFD50068DCFC /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		AFD19315209C8B12004EEECE /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		AFD290DF207038CF000C27F2 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		AFD290E1207168CD000C27F2 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				AFCE2A2A2066AF310068DCFC /* Assets.xcassets */,
 				AFCE2A2F2066AF310068DCFC /* Info.plist */,
 				AF65820320AAD4C3005A6C36 /* GoogleService-Info.plist */,
-				AFCE2A352066AFD50068DCFC /* LoginFormController.swift */,
 				AFC61C6F2076BD2A00E82685 /* LoginWebViewController.swift */,
 				AF51769B207CEC6200580589 /* PhotoView.swift */,
 			);
@@ -352,7 +349,6 @@
 				AF5B033F209340A00016833D /* Feed.swift in Sources */,
 				AF5B0344209348B20016833D /* NewsTableViewCell.swift in Sources */,
 				AF74CFB72093187900BC846D /* NewsService.swift in Sources */,
-				AFCE2A362066AFD50068DCFC /* LoginFormController.swift in Sources */,
 				AFCC8D3B2072D61700C745A9 /* FriendPhotosViewController.swift in Sources */,
 				AFE4514F207B857E0091919A /* Group.swift in Sources */,
 				AFCC8D43207372CB00C745A9 /* MyGroupsCell.swift in Sources */,

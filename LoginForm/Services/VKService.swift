@@ -35,7 +35,7 @@ class VKService{
             let responseJson = rootjson["response"]
             let itemsJson = responseJson["items"]
             
-            let users = itemsJson.flatMap{User(json: $1)}
+            let users = itemsJson.compactMap{User(json: $1)}
             
             self?.saveFriendsList(users)
         }

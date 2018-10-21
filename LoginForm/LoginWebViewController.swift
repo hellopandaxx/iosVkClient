@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-import FirebaseDatabase
 
 class LoginWebViewController: UIViewController {
 
@@ -22,6 +21,10 @@ class LoginWebViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // TODO: check token in FB
+        
+        // Check expiration, otherwise make a request for a new one.
         
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
@@ -79,9 +82,6 @@ extension LoginWebViewController : WKNavigationDelegate {
         
         let userId = params["user_id"]!
         currentUserId = userId
-
-        let dbLink = Database.database().reference()
-        dbLink.child("Users").updateChildValues([userId : FBUser(userId: userId, addedGroups: ([FBGroup]())).toAnyObject])
         
         performSegue(withIdentifier: "loginSegue", sender: nil)
         

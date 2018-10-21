@@ -16,7 +16,6 @@
 		AF5B0342209341880016833D /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B0341209341880016833D /* NewsTableViewController.swift */; };
 		AF5B0344209348B20016833D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B0343209348B20016833D /* NewsTableViewCell.swift */; };
 		AF65820420AAD4C3005A6C36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF65820320AAD4C3005A6C36 /* GoogleService-Info.plist */; };
-		AF65820720AADD50005A6C36 /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65820620AADD50005A6C36 /* FBUser.swift */; };
 		AF74CFB52093162A00BC846D /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF74CFB42093162A00BC846D /* News.storyboard */; };
 		AF74CFB72093187900BC846D /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF74CFB62093187900BC846D /* NewsService.swift */; };
 		AFC61C702076BD2A00E82685 /* LoginWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC61C6F2076BD2A00E82685 /* LoginWebViewController.swift */; };
@@ -51,7 +50,6 @@
 		AF5B0341209341880016833D /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		AF5B0343209348B20016833D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		AF65820320AAD4C3005A6C36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		AF65820620AADD50005A6C36 /* FBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
 		AF74CFB42093162A00BC846D /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		AF74CFB62093187900BC846D /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		AFC61C6F2076BD2A00E82685 /* LoginWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebViewController.swift; sourceTree = "<group>"; };
@@ -129,14 +127,6 @@
 			path = News;
 			sourceTree = "<group>";
 		};
-		AF65820520AADD38005A6C36 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				AF65820620AADD50005A6C36 /* FBUser.swift */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
 		AFCC8D392072D5DB00C745A9 /* FriendFotos */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,7 +175,6 @@
 		AFCE2A222066AF310068DCFC /* LoginForm */ = {
 			isa = PBXGroup;
 			children = (
-				AF65820520AADD38005A6C36 /* Firebase */,
 				AF5B03402093415E0016833D /* News */,
 				AFE45149207B82190091919A /* Model */,
 				AF318B8E207AFB970002F751 /* Storyboards */,
@@ -336,22 +325,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-VKClient/Pods-VKClient-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -375,7 +358,6 @@
 				AFCC8D43207372CB00C745A9 /* MyGroupsCell.swift in Sources */,
 				AFD290E0207038CF000C27F2 /* FriendsTableViewController.swift in Sources */,
 				AFD290E2207168CD000C27F2 /* FriendsTableViewCell.swift in Sources */,
-				AF65820720AADD50005A6C36 /* FBUser.swift in Sources */,
 				AFE4514B207B82410091919A /* User.swift in Sources */,
 				AF5B0342209341880016833D /* NewsTableViewController.swift in Sources */,
 				AFCC8D41207372A700C745A9 /* MyGroupsController.swift in Sources */,

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseDatabase
 
 class MyGroupsController: UITableViewController {
 
@@ -67,9 +66,6 @@ class MyGroupsController: UITableViewController {
                 vkService.joinGroup(id: newGroup.id){[weak self] result in
                     if(result){
                         self?.loadGroups()
-                        
-                        let dbLink = Database.database().reference()
-                        dbLink.child("Users/\(currentUserId)/addedGroups").updateChildValues([String(newGroup.id) : FBGroup(groupId: String(newGroup.id)).toAnyObject])
                     }
                 }
              }

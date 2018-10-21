@@ -8,8 +8,6 @@ target 'VKClient' do
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON'
   pod 'RealmSwift'
-  pod 'Firebase/Core'
-  pod 'Firebase/Database'
 
   # Pods for VKClient
 

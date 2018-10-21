@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XRe-g4-xxw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XRe-g4-xxw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="4352" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +21,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" id="H3H-NW-sa8" customClass="FriendsTableViewCell" customModule="VKClient" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H3H-NW-sa8" id="EI5-dY-MSG">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H3H-NW-sa8" id="EI5-dY-MSG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -32,7 +32,7 @@
                                                 <constraint firstAttribute="height" constant="60" id="rpv-7d-vbU"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVb-Kv-ovo">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVb-Kv-ovo">
                                             <rect key="frame" x="75" y="25" width="290" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -81,29 +81,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Khj-vx-ZT7">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="90" height="90"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendPhotoCell" id="4cC-9w-aUp" customClass="FriendPhotoViewCell" customModule="VKClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u0w-wT-Vk0">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alexander" translatesAutoresizingMaskIntoConstraints="NO" id="u0w-wT-Vk0">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="u0w-wT-Vk0" firstAttribute="top" secondItem="4cC-9w-aUp" secondAttribute="top" id="39D-mE-Bu4"/>
-                                    <constraint firstAttribute="trailing" secondItem="u0w-wT-Vk0" secondAttribute="trailing" id="Lql-zk-LBd"/>
-                                    <constraint firstAttribute="bottom" secondItem="u0w-wT-Vk0" secondAttribute="bottom" id="nBD-Zs-Uqb"/>
-                                    <constraint firstItem="u0w-wT-Vk0" firstAttribute="leading" secondItem="4cC-9w-aUp" secondAttribute="leading" id="sxl-q7-EYU"/>
+                                    <constraint firstItem="u0w-wT-Vk0" firstAttribute="leading" secondItem="4cC-9w-aUp" secondAttribute="leading" id="68j-mT-F6U"/>
+                                    <constraint firstItem="u0w-wT-Vk0" firstAttribute="top" secondItem="4cC-9w-aUp" secondAttribute="top" id="Jt2-pr-595"/>
+                                    <constraint firstAttribute="trailing" secondItem="u0w-wT-Vk0" secondAttribute="trailing" id="UwK-ph-EDj"/>
+                                    <constraint firstAttribute="bottom" secondItem="u0w-wT-Vk0" secondAttribute="bottom" id="sn3-f0-cmE"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="photoCell" destination="u0w-wT-Vk0" id="aWR-2P-VEK"/>
@@ -123,7 +123,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7J1-zE-dHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4748" y="-372"/>
+            <point key="canvasLocation" x="4748" y="-372.86356821589209"/>
         </scene>
         <!--Friends-->
         <scene sceneID="vFS-Rg-11L">
@@ -145,4 +145,7 @@
             <point key="canvasLocation" x="2428" y="-372"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Alexander" width="680" height="886"/>
+    </resources>
 </document>

@@ -26,7 +26,7 @@ class FriendsTableViewController: UITableViewController {
     
     func pairTableAndRealm() {
         guard let realm = try? Realm() else { return }
-        friends = realm.objects(User.self)
+        friends = realm.objects(User.self).sorted(byKeyPath: "firstName")
         token = friends?.observe { [weak self] (changes: RealmCollectionChange) in
             guard let tableView = self?.friendsTableView else { return }
             switch changes {
@@ -86,7 +86,9 @@ class FriendsTableViewController: UITableViewController {
             let photosController = segue.destination as? FriendPhotosViewController
             
             if let indexPath = friendsTableView.indexPathForSelectedRow {
-                let friend = friends![indexPath.row]
+                 let friend = friends![indexPath.row]
+                print(friend.firstName)
+                //let friend = friends!.
                 photosController?.friend = friend
             }
         }

@@ -38,20 +38,25 @@ class VKService{
             let users = itemsJson.flatMap{User(json: $1)}
             
             self?.saveFriendsList(users)
-            // completion()
         }
     }
     
-    func saveFriendsList(_ friends: [User])
+    func saveFriendsList(_ newFriendsList: [User])
     {
         do{
             let realm = try Realm()
             
-            let oldFriends = realm.objects(User.self)
+            let oldFriendsList = realm.objects(User.self)
+            
+            // Get deleted friends
+            let friendsToRemove = oldFriendsList.filter{friend in !Set(newFriendsList).contains(where: {$0.id == friend.id})}
+            
+            // Add new friends
+            let friendsToAdd = newFriendsList.filter{friend in !Set(oldFriendsList).contains(where: {$0.id == friend.id})}
             
             realm.beginWrite()
-            realm.delete(oldFriends)
-            realm.add(friends)
+            realm.delete(friendsToRemove)
+            realm.add(friendsToAdd)
             try realm.commitWrite()
         } catch {
             print(error)

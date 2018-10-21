@@ -20,6 +20,8 @@ class FriendPhotosViewController: UICollectionViewController {
     
     var token : NotificationToken?
     
+    private let columnsCount = CGFloat(4)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,12 +30,16 @@ class FriendPhotosViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
         
-        photosNavigationItem.title = (friend?.firstName)! + "'s photos"
+        let screenWidth = UIScreen.main.bounds.width
+        let layout = UICollectionViewFlowLayout()
+        // layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: screenWidth / columnsCount, height: screenWidth / columnsCount)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         
-//        vkService.loadAllUserPhotos(userId: friend!.id){[weak self] photos in
-//            self?.photos = photos
-//            self?.photosTableView.reloadData()
-//        }
+        self.collectionView?.setCollectionViewLayout(layout, animated: true)
+        
+        photosNavigationItem.title = (friend?.firstName)! + "'s photos"
         
         vkService.loadAllUserPhotos(userId: friend!.id)
         
@@ -42,8 +48,9 @@ class FriendPhotosViewController: UICollectionViewController {
     
     func pairTableAndRealm() {
         guard let realm = try? Realm() else { return }
-        
-        let filter = "ownerId=\(friend?.id)"
+        print(friend!.firstName + " " + friend!.id.description)
+        let filter = "ownerId=\(friend!.id.description)"
+        print(filter)
         photos = realm.objects(Photo.self).filter(filter)
         token = photos?.observe { [weak self] (changes: RealmCollectionChange) in
             guard let collectionView = self?.photosTableView else { return }
@@ -91,14 +98,15 @@ class FriendPhotosViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return photos!.count
+        return photos?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendPhotoCell", for: indexPath) as? FriendPhotoViewCell
-    
+        
+        cell?.photoCell.image = nil
         cell?.photoCell.downloadedFrom(link: photos![indexPath.row].photo75url)
-    
+        cell?.photoCell.contentMode = .scaleAspectFill
         return cell!
     }
 

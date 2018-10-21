@@ -10,8 +10,12 @@ import UIKit
 import WebKit
 
 class LoginWebViewController: UIViewController {
+    
+    private let FriendsAccessCode = 2
+    private let PhotosAccessCode = 4
+    private let WallAccessCode = 8192
+    private let GroupsAccessCode = 262144
 
-    let userDefaults = UserDefaults.standard
     
     @IBOutlet weak var webView: WKWebView!{
         didSet{
@@ -21,13 +25,17 @@ class LoginWebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        makeLoginRequest()
+    }
 
-        // Do any additional setup after loading the view.
-        
-        // TODO: check token in FB
-        
-        // Check expiration, otherwise make a request for a new one.
-        
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    private func makeLoginRequest(){
+        let accessScope = FriendsAccessCode + PhotosAccessCode + WallAccessCode + GroupsAccessCode
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "oauth.vk.com"
@@ -36,29 +44,13 @@ class LoginWebViewController: UIViewController {
             URLQueryItem(name: "client_id", value: "6438914"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-            URLQueryItem(name: "scope", value: "270343"), // 262150
+            URLQueryItem(name: "scope", value: accessScope.description), //"270342"
             URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "v", value: "5.74")
+            URLQueryItem(name: "v", value: "5.87")
         ]
         let request = URLRequest(url: urlComponents.url!)
         webView.load(request)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension LoginWebViewController : WKNavigationDelegate {
@@ -69,6 +61,7 @@ extension LoginWebViewController : WKNavigationDelegate {
                 decisionHandler(.allow)
                 return
         }
+        
         let params = fragment
             .components(separatedBy: "&")
             .map { $0.components(separatedBy: "=") }
@@ -80,7 +73,6 @@ extension LoginWebViewController : WKNavigationDelegate {
                 return dict
         }
         token = params["access_token"]!
-        print("token: " + token)
         
         let userId = params["user_id"]!
         currentUserId = userId
